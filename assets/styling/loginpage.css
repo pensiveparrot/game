@@ -134,7 +134,17 @@ color: #eee;
     top:10%;
     right:10%;
 }
-
+#backbutton {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    bottom: 100px;
+    font-size:50px;
+    visibility: hidden;
+}
  #diatiranustrackplay {
     background-color: transparent;
     background-repeat: no-repeat;

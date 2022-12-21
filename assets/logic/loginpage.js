@@ -178,18 +178,31 @@ function onceLoaded(){
 
     
 }
-loginCount=0;
+function renderHome(){
+  document.getElementById('logininput').style.visibility='hidden';
+  document.getElementById('registerinput').style.visibility='hidden';
+  document.getElementById('register').style.visibility = 'visible';
+   document.getElementById('register').style.right = "30%";
+  document.getElementById('login').style.right ="50%"
+  document.getElementById('settings').style.visibility = 'visible';
+  document.getElementById('backbutton').style.visibility= 'hidden';
+  document.getElementById('login').style.visibility = 'visible';
+}
+
 function handleLogin(){
-if(loginCount==0)
-{
-  document.getElementById('register').remove();
-  document.getElementById('settings').remove();
+  let isBackButtonVisible = document.getElementById('backbutton');
+
+if(window.getComputedStyle(isBackButtonVisible).visibility==="hidden"){
+  document.getElementById('register').style.visibility = 'hidden';
+  document.getElementById('settings').style.visibility = 'hidden';
   let loginButton = document.getElementById('login');
   loginButton.style.right = "40%";
   let container = document.getElementById('logininput');
   container.style.visibility ="visible";
+  let backbutton = document.getElementById('backbutton');
+  backbutton.style.visibility="visible";
   var loginUpdateButton = document.getElementById('login');
-  loginCount=loginCount+1;
+  
 }
 else{
   loginUpdateButton.onclick = handleDetails();
@@ -197,21 +210,24 @@ else{
 
 }
 function handleDetails(){
-  
+  console.log('not implemented!@!!!'
+  );
 }
 
-registerCount=0;
+
 function handleRegister(){
-  
-  if(registerCount==0){
-    document.getElementById('login').remove();
-    document.getElementById('settings').remove();
+  let isBackButtonVisible = document.getElementById('backbutton');
+
+if(window.getComputedStyle(isBackButtonVisible).visibility==="hidden"){
+    document.getElementById('login').style.visibility = 'hidden';
+    document.getElementById('settings').style.visibility = 'hidden';
     let registerButton = document.getElementById('register');
     registerButton.style.right = "40%";
   let container =  document.getElementById('registerinput');
   container.style.visibility = "visible";
   var registerUpdateButton = document.getElementById('register');
-  registerCount=registerCount+1;
+  let backbutton = document.getElementById('backbutton');
+  backbutton.style.visibility="visible";
   }
 
   else

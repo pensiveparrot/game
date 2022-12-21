@@ -11,7 +11,7 @@
 </head>
 
 <body onload="onceLoaded()">
-    
+    <button id="backbutton" onclick="renderHome()">🔙</button>
     <div id="particles-js"></div>
     <div class="container">
     <button class="btn prevent-select" id="login" onclick="handleLogin()">Login</button>
@@ -19,6 +19,7 @@
     <button class="btn prevent-select" id="settings">Settings
     </div>
 </div>
+
 <div id="logininput">
 <input type= 'text' id='login-username' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Login username">
 <input type='password' id='login-password' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Login password">
@@ -27,6 +28,7 @@
     <input type= 'text' id='register-username' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Preferred username">
     <input type='password' id='register-password' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Preferred password">
     </div>
+
 
     <pre id="title" class="prevent-select">
         
