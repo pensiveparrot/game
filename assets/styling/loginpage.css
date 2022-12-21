@@ -34,7 +34,7 @@ body {
         position: fixed;
         top: 50%;
         right: 35%;
-        visibility:visible;   
+        visibility:hidden;   
     }
 #login-username {
     width: 300px;

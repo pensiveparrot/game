@@ -178,11 +178,32 @@ function onceLoaded(){
 
     
 }
+loginCount=0;
+function handleLogin(){
+if(loginCount==0)
+{
+  document.getElementById('register').remove();
+  document.getElementById('settings').remove();
+  let loginButton = document.getElementById('login');
+  loginButton.style.right = "40%";
+  let container = document.getElementById('logininput');
+  container.style.visibility ="visible";
+  var loginUpdateButton = document.getElementById('login');
+  loginCount=loginCount+1;
+}
+else{
+  loginUpdateButton.onclick = handleDetails();
+}
 
-count=0;
+}
+function handleDetails(){
+  
+}
+
+registerCount=0;
 function handleRegister(){
   
-  if(count==0){
+  if(registerCount==0){
     document.getElementById('login').remove();
     document.getElementById('settings').remove();
     let registerButton = document.getElementById('register');
@@ -190,7 +211,7 @@ function handleRegister(){
   let container =  document.getElementById('registerinput');
   container.style.visibility = "visible";
   var registerUpdateButton = document.getElementById('register');
-  count=count+1;
+  registerCount=registerCount+1;
   }
 
   else
