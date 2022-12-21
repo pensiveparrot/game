@@ -1,0 +1,204 @@
+body {
+    background-image: url('../../assets/renderables/sky.png');
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    position: fixed;
+
+    background-size: 100% 100%;
+}
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-position: bottom;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100% 100%;
+    }
+
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: white;
+        opacity: 1; /* Firefox */
+      }
+      
+      :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: white;
+      }
+      
+      ::-ms-input-placeholder { /* Microsoft Edge */
+        color: white;
+      }
+
+    #logininput {
+        position: fixed;
+        top: 50%;
+        right: 35%;
+        visibility:visible;   
+    }
+#login-username {
+    width: 300px;
+    height: 50px;
+    background-color: grey;
+    border: #eee;
+    font-size: large;
+    color: #eee;
+    
+}
+#login-password {
+    width: 300px;
+    height: 50px;
+    background-color: grey;
+    border: #eee;
+    font-size: large;
+    color: #eee;
+}
+#registerinput {
+    position: fixed;
+    top: 50%;
+    right: 35%;
+    visibility:hidden;   
+}
+#register-username {
+width: 300px;
+height: 50px;
+background-color: grey;
+border: #eee;
+font-size: large;
+color: #eee;
+}
+#register-password {
+width: 300px;
+height: 50px;
+background-color: grey;
+border: #eee;
+font-size: large;
+color: #eee;
+}
+  
+#login {
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    position: fixed;
+    top:70%;
+    right: 50%;
+    /* margin-left: 10%; */
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    color: black;
+    font-size: large;
+
+}
+
+#register {
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    position: fixed;
+    top: 70%;
+    right: 30%;
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    color: black;
+    font-size: large;
+
+}
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  }
+
+#settings {
+    height: 10%;
+    width: 20%;
+    text-align: center;
+    position: fixed;
+    top: 80%;
+    right: 40%;
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+    color: black;
+    font-size: large;
+
+}
+
+#title {
+    position:fixed;
+    display: flex;
+    left: 37.5%;
+    top: 20%;
+    color:antiquewhite;
+}
+
+#diatiranustrackparent {
+    position:fixed;
+    top:10%;
+    right:10%;
+}
+
+ #diatiranustrackplay {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 150%;
+}
+
+#diatiranustrackpause {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 150%;
+}
+
+#diatiranustrackvolup {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 150%;
+}
+
+#diatiranustrackvoldwn {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    font-size: 150%;
+} 
+.btn:hover {
+    background-position: right center; /* change the direction of the change here */
+  }
+  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+    min-height: 100vh;
+    position: absolute;
+  }
+  .btn {
+    flex: 1 1 auto;
+    margin: 10px;
+    padding: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+   }

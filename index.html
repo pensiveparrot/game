@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Dia Tiranus</title>
+    <link rel="stylesheet" href="assets/styling/loginpage.css">
+    <script type="text/javascript" src="assets/logic/loginpage.js"></script>
+    <script src="/node_modules/particles.js/particles.js">
+    </script>
+    <script src="/node_modules/particles.js/demo/js/app.js">
+    </script>
+    <meta charset="UTF-8">
+</head>
+
+<body onload="onceLoaded()">
+    
+    <div id="particles-js"></div>
+    <div class="container">
+    <button class="btn prevent-select" id="login">Login</button>
+    <button class="btn prevent-select" id="register" onclick="handleRegister()">Register</button>
+    <button class="btn prevent-select" id="settings">Settings
+    </div>
+</div>
+<div id="logininput">
+<input type= 'text' id='login-username' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Login username">
+<input type='password' id='login-password' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Login password">
+</div>
+    <div id="registerinput">
+    <input type= 'text' id='register-username' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Preferred username">
+    <input type='password' id='register-password' onpaste='handlepaste()' onchange='handlechange()' required placeholder="Preferred password">
+    </div>
+
+    <pre id="title" class="prevent-select">
+        
+
+         _____  _         _______ _                           
+        |  __ \(_)       |__   __(_)                          
+        | |  | |_  __ _     | |   _ _ __ __ _ _ __  _   _ ___ 
+        | |  | | |/ _` |    | |  | | '__/ _` | '_ \| | | / __|
+        | |__| | | (_| |    | |  | | | | (_| | | | | |_| \__ \
+        |_____/|_|\__,_|    |_|  |_|_|  \__,_|_| |_|\__,_|___/
+                                                              
+                                                              
+       
+    </pre>
+
+    
+    <audio id="player" src="/assets//renderables/brutal.mp3" loop autoplay></audio>
+    
+
+    
+
+    <div id="diatiranustrackparent"> 
+      <button class="prevent-select" id="diatiranustrackplay" onclick="document.getElementById('player').play()">▶️</button> 
+      <button class="prevent-select" id="diatiranustrackpause" onclick="document.getElementById('player').pause()">⏸️</button> 
+      <button class="prevent-select" id="diatiranustrackvoldwn" onclick="document.getElementById('player').volume -= 0.1">🔉</button>
+      <button class="prevent-select" id="diatiranustrackvolup" onclick="document.getElementById('player').volume += 0.1">🔊</button> 
+    </div>
+
+
+</body>
+
+
+
+
+</html>
