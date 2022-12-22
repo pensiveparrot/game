@@ -181,20 +181,20 @@ function onceLoaded(){
 function renderHome(){
   document.getElementById('logininput').style.visibility='hidden';
   document.getElementById('registerinput').style.visibility='hidden';
-  document.getElementById('register').style.visibility = 'visible';
+  document.getElementById('register').style.display = 'flex';
    document.getElementById('register').style.right = "30%";
   document.getElementById('login').style.right ="50%"
-  document.getElementById('settings').style.visibility = 'visible';
+  document.getElementById('settings').style.display = 'flex';
   document.getElementById('backbutton').style.visibility= 'hidden';
-  document.getElementById('login').style.visibility = 'visible';
+  document.getElementById('login').style.display = 'flex';
 }
 
 function handleLogin(){
   let isBackButtonVisible = document.getElementById('backbutton');
 
 if(window.getComputedStyle(isBackButtonVisible).visibility==="hidden"){
-  document.getElementById('register').style.visibility = 'hidden';
-  document.getElementById('settings').style.visibility = 'hidden';
+  document.getElementById('register').style.display = 'none';
+  document.getElementById('settings').style.display = 'none';
   let loginButton = document.getElementById('login');
   loginButton.style.right = "40%";
   let container = document.getElementById('logininput');
@@ -219,10 +219,11 @@ function handleRegister(){
   let isBackButtonVisible = document.getElementById('backbutton');
 
 if(window.getComputedStyle(isBackButtonVisible).visibility==="hidden"){
-    document.getElementById('login').style.visibility = 'hidden';
-    document.getElementById('settings').style.visibility = 'hidden';
+    document.getElementById('login').style.display = 'none';
+    document.getElementById('settings').style.display = 'none';
     let registerButton = document.getElementById('register');
     registerButton.style.right = "40%";
+    
   let container =  document.getElementById('registerinput');
   container.style.visibility = "visible";
   var registerUpdateButton = document.getElementById('register');
@@ -236,12 +237,47 @@ if(window.getComputedStyle(isBackButtonVisible).visibility==="hidden"){
 
   }
 }
-
+const bcrypt = require("bcrypt");
+var db = require('../../../mysql/data/game');
 function newUser() {
 
-  console.log('register not implemented!');
+  app.use(express.json())
+  //middleware to read req.body.<params>
+  //CREATE USER
+  app.post("/createUser", function (req,res)  {
+    if(document.getElementById('register-username'.value!=null && document.getElementById('register-password').value)!=null){}
+  const user = document.getElementById('register-username').value;
+  const hashedPassword =  bcrypt.hash(document.getElementById('register-password').value,10);
+  db.getConnection( async (err, connection) => {
+   if (err) throw (err)
+   const sqlSearch = "SELECT * FROM userTable WHERE user = ?"
+   const search_query = mysql.format(sqlSearch,[user])
+   const sqlInsert = "INSERT INTO userTable VALUES (0,?,?)"
+   const insert_query = mysql.format(sqlInsert,[user, hashedPassword])
+   // ? will be replaced by values
+   // ?? will be replaced by string
+   await connection.query (search_query, async (err, result) => {
+    if (err) throw (err)
+    console.log("------> Search Results")
+    console.log(result.length)
+    if (result.length != 0) {
+     connection.release()
+     console.log("------> User already exists")
+     res.sendStatus(409) 
+    } 
+    else {
+     await connection.query (insert_query, (err, result)=> {
+     connection.release()
+     if (err) throw (err)
+     console.log ("--------> Created new User")
+     console.log(result.insertId)
+     res.sendStatus(201)
+    })
+   }
+  }) //end of connection.query()
+  }) //end of db.getConnection()
+  }) //end of app.post()
+  
+  
 }
 
-    // document.onloadeddata
-// }   
-    // disable right click
